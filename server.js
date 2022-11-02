@@ -39,7 +39,11 @@ mongoose.connection.on('error',(err)=>{
  
 
 
- 
+app.get('/',(req,res)=>{
+
+    res.send("server is running...");
+
+})
 
  
  
