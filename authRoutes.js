@@ -41,17 +41,17 @@ router.post('/UserSignup',async (req,res)=>{
  
 router.post('/UserSigin',async (req,res)=>{
    
-  const {Email,Password} = req.body
-  if(Email==="" || Password===""){
+  const { FirstName,LastName,Password} = req.body
+  if( FirstName==="" || LastName==="" || Password===""){
        res.send({"Status":"Wrong"})
   }
-  const user = await User.findOne({Email})
+  const user = await User.findOne({FirstName,LastName,Password})
 
   if(!user){
        res.send({"Status":"NO"})
   }
   else{
-      User.find({Email:Email,Password:Password},(err, docs) => {
+      User.find({FirstName:FirstName,Password:Password,LastName:LastName},(err, docs) => {
         if (docs.length>0) {
             res.send(docs);
            
