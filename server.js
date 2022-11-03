@@ -7,7 +7,7 @@ const cors = require("cors");
  
 const {mogoUrl} = require('./keys');
 mongoose.connect(mogoUrl)
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 require('./models');
  
  
@@ -36,7 +36,7 @@ mongoose.connection.on('error',(err)=>{
 })
 
  
- 
+/*
 const User = mongoose.Schema({
     Name:{
         type:String,
@@ -114,7 +114,7 @@ app.get('/',async(req,res)=>{
     
 })
 
-  
+*/  
 app.listen(process.env.PORT || 5000,()=>{
     console.log("server is runnung on port 5000");
     console.log("done");
