@@ -35,7 +35,11 @@ mongoose.connection.on('error',(err)=>{
     console.log("error occered... ",err);
 })
 
- 
+
+app.get('/',(req,res)=>{
+    res.send("server is running....");
+})
+
 /*
 const User = mongoose.Schema({
     Name:{
